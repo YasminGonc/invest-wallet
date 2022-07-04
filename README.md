@@ -20,4 +20,5 @@ A InvestWallet será um canal capaz de organizar a carteira de investimentos de 
 Todos os ativos disponíveis nessa aplicação estão baseados na minha carteira pessoal. Os ativos contidos nela são de ordem pessoal, portanto são ativos que fazem sentido para os meus objetivos. Sendo assim, <strong>não</strong> é uma recomendação de compra.
 
 ## Fase atual do projeto
-Construção das telas iniciais com o Figma. 
+Construção das telas iniciais com o <a href="https://www.figma.com/file/P78MIZRORbH7NboQyGsKXu/Invest-Wallet?node-id=0%3A1">Figma</a>.
+
