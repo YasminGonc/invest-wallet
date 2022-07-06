@@ -1,0 +1,115 @@
+:root{
+    --cor1: #F4F1DE;
+    --cor2: #E07A5F;
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    background-color: var(--cor1);
+}
+header button{
+    font-size: 2rem;
+    margin-right: 2rem;
+    background-color: transparent;
+    border: transparent;
+    cursor: pointer;
+}
+.add-menu{
+    display: none;
+}
+.add-menu.on{
+    display: block;
+    position: absolute;
+    height: 100vh;
+    width: 30%;
+    top: 0;
+    right: 0;
+    padding-left: 1rem;
+    background-color: white;
+}
+li{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1rem;
+    list-style-type: none;
+    width: 90%;
+}
+#options{ /*Continuar estilizando botão de +*/
+    width: 10rem;
+}
+#info-geral{
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem 2rem 0rem 2rem;
+    background-color: var(--cor1);
+}
+#info-left, #info-right{
+    width: 30%;
+}
+.upper{
+    background-color: var(--cor2);
+    padding: 1rem;
+}
+.txt-upper, .txt-value{
+    font-size: 1.5rem;
+}
+.bottom{
+    padding: 1rem;
+}
+span{
+    font-size: 0.8rem;
+    padding-right: 1rem;
+}
+div#info-center{
+    width: 30%;
+    text-align: center;
+}
+.dropdowntable{
+    margin: 1rem 2rem 0rem 2rem;
+    display: flex;
+    flex-direction: column;
+}
+.dropdowntable button{
+    background-color: var(--cor2);
+    padding: 0.6rem;
+    text-align: left;
+    border: none;
+    cursor: pointer;
+}
+.material-symbols-outlined{
+    font-size: 1rem;
+    padding-left: 2rem;
+}
+.material-symbols-outlined.on{ /*Mudar a biblioteca do ícone e arrumar o toggle das demais tabelas*/
+    transform: rotate(180deg);
+    transition: 0.1s;
+}
+.tb-cons, .tb-acao, .tb-fii, .tb-cripto{
+    display: none;
+}
+.tb-cons.on, .tb-acao.on, .tb-fii.on, .tb-cripto.on{
+    display: table;
+    text-align: center;
+    font-size: 0.9rem;
+    margin-top: 1rem;
+    border-collapse: collapse;
+}
+tr{
+    border-bottom: 1px solid black;
+}
+th{
+    font-size: 0.8rem;
+}
+td, th{
+    padding: 0.5rem;
+}
+
+
