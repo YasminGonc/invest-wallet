@@ -17,29 +17,35 @@
         <h1>Invest Wallet</h1>
         <nav>
             <button id="add" onclick="showAdd()">+</button>
-            <ul class="add-menu">
+            <div class="add-menu">
                 <button id="close" onclick="showAdd()">&times;</button>
-                <li>
+                <div class="input">
                     <label for="options">Tipo de ativo</label>
-                    <select name="options" id="options">
+                     <select name="options" id="options">
                         <option value="null">-</option>
                         <option value="acao">Ação</option>
                         <option value="fii">FII</option>
-                        <option value="cripto">ETF cripto</option>
-                    </select>
-                </li>
-                <li>
-                    <input type="text" name="ativo" placeholder="Ativo"><!--Fazer autocomplit com as opções da bolsa, vou ter que usar uma biblioteca. Victor falou de filtro-->
-                </li>
-                <li>
+                         <option value="cripto">ETF cripto</option>
+                     </select>
+                </div>
+                
+                <div class="input">
+                    <label for="ativo">Ativo</label>
+                    <input type="text" name="ativo" id="ativo"><!--Fazer autocomplit com as opções da bolsa, vou ter que usar uma biblioteca. Victor falou de filtro-->
+                </div>
+                
+                <div class="input">
                     <label for="qtd">Quantidade comprada</label>
                     <input type="number" name="qtd" id="qtd">
-                </li>
-                <li>
+                </div>
+               
+                <div class="input">
                     <label for="valor">Valor de compra por unidade</label>
                     <input type="number" name="valor" id="valor">
-                </li>
-            </ul>
+                </div>
+
+                <button id="adic"><strong>Adicionar</strong></button>
+            </div>
         </nav>
     </header>
     <main>
