@@ -39,6 +39,7 @@ header button{
 .input{
     display: flex;
     flex-direction: column;
+    border: none;
 }
 label{
     margin-bottom: 0.4rem;

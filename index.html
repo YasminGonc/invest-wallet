@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,46 +8,50 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="style.css">
     <title>Invest Wallet</title>
 </head>
+
 <body>
     <header>
         <h1>Invest Wallet</h1>
         <nav>
             <button id="add" onclick="showAdd()">+</button>
+
             <div class="add-menu">
                 <button id="close" onclick="showAdd()">&times;</button>
-                <div class="input">
-                    <label for="options">Tipo de ativo</label>
-                     <select name="options" id="options">
-                        <option value="null">-</option>
-                        <option value="acao">Ação</option>
-                        <option value="fii">FII</option>
-                         <option value="cripto">ETF cripto</option>
-                     </select>
-                </div>
-                
-                <form autocomplete="off">
-                    <div class="input">
+
+                <form>
+                    <fieldset class="input">
+                        <label for="options">Tipo de ativo</label>
+                        <select name="options" id="options">
+                            <option value="null">-</option>
+                            <option value="acao">Ação</option>
+                            <option value="fii">FII</option>
+                            <option value="cripto">ETF cripto</option>
+                        </select>
+                    </fieldset>
+
+                    <fieldset class="input">
                         <label for="ativo">Ativo</label>
                         <input type="text" name="ativo" id="input">
-                    </div>
-                    <ul class="list"></ul>
-                </form>
-                
-                <div class="input">
-                    <label for="qtd">Quantidade comprada</label>
-                    <input type="number" name="qtd" id="qtd">
-                </div>
-               
-                <div class="input">
-                    <label for="valor">Valor de compra por unidade</label>
-                    <input type="number" name="valor" id="valor">
-                </div>
+                        <ul class="list"></ul>
+                    </fieldset>
 
-                <button id="adic"><strong>Adicionar</strong></button>
+                    <fieldset class="input">
+                        <label for="qtd">Quantidade comprada</label>
+                        <input type="number" name="qtd" id="qtd">
+                    </fieldset>
+
+                    <fieldset class="input">
+                        <label for="valor">Valor de compra por unidade</label>
+                        <input type="number" name="valor" id="valor">
+                    </fieldset>
+
+                    <input type="submit" id="adic" value="Adicionar">
+                </form>
             </div>
         </nav>
     </header>
@@ -77,7 +82,8 @@
             </div>
         </section>
         <section class="dropdowntable">
-            <button onclick="showTableCons()"><strong>PATRIMÔNIO CONSOLIDADO</strong><span class="material-symbols-outlined">expand_more</span></button>
+            <button onclick="showTableCons()"><strong>PATRIMÔNIO CONSOLIDADO</strong><span
+                    class="material-symbols-outlined">expand_more</span></button>
             <table class="tb-cons">
                 <thead>
                     <tr>
@@ -118,7 +124,8 @@
             </table>
         </section>
         <section class="dropdowntable">
-            <button onclick="showTableAcoes()"><strong>AÇÕES</strong><span class="material-symbols-outlined">expand_more</span></button>
+            <button onclick="showTableAcoes()"><strong>AÇÕES</strong><span
+                    class="material-symbols-outlined">expand_more</span></button>
             <table class="tb-acao">
                 <thead>
                     <tr>
@@ -145,7 +152,8 @@
             </table>
         </section>
         <section class="dropdowntable">
-            <button onclick="showTableFii()"><strong>FUNDOS IMOBILIÁRIOS</strong><span class="material-symbols-outlined">expand_more</span></button>
+            <button onclick="showTableFii()"><strong>FUNDOS IMOBILIÁRIOS</strong><span
+                    class="material-symbols-outlined">expand_more</span></button>
             <table class="tb-fii">
                 <thead>
                     <tr>
@@ -172,7 +180,8 @@
             </table>
         </section>
         <section class="dropdowntable">
-            <button onclick="showTableCripto()"><strong>ETF CRIPTO</strong><span class="material-symbols-outlined">expand_more</span></button>
+            <button onclick="showTableCripto()"><strong>ETF CRIPTO</strong><span
+                    class="material-symbols-outlined">expand_more</span></button>
             <table class="tb-cripto">
                 <thead>
                     <tr>
@@ -202,4 +211,5 @@
 
     <script src="script.js"></script>
 </body>
+
 </html>
