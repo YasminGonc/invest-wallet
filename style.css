@@ -106,25 +106,22 @@ div#info-center{
     display: flex;
     flex-direction: column;
 }
-.dropdowntable button{
+.dropdowntable h3{
     background-color: var(--cor2);
     padding: 0.6rem;
     text-align: left;
-    border: none;
+    text-transform: uppercase;
+    font-size: 0.9rem;
     cursor: pointer;
 }
-.material-symbols-outlined{
-    font-size: 1rem;
-    padding-left: 2rem;
+.dropdowntable img {
+    vertical-align: middle;
+    margin-left: 1rem;
 }
-.material-symbols-outlined.on{ /*Mudar a biblioteca do ícone e arrumar o toggle das demais tabelas*/
-    transform: rotate(180deg);
-    transition: 0.1s;
-}
-.tb-cons, .tb-acao, .tb-fii, .tb-cripto{
+.tb-consolidado, .tb-acao, .tb-fii, .tb-cripto{
     display: none;
 }
-.tb-cons.on, .tb-acao.on, .tb-fii.on, .tb-cripto.on{
+.tb-consolidado.on, .tb-acao.on, .tb-fii.on, .tb-cripto.on{
     display: table;
     text-align: center;
     font-size: 0.9rem;

@@ -1,31 +1,25 @@
-/*Funções para aparecer as tabelas quando clicar*/ 
-function showTableCons(){
-    var tableCons = document.querySelector(".tb-cons");
-    var seta = document.querySelector(".material-symbols-outlined");
+//Funções para aparecer as tabelas quando clicar
+const btnDropDown = document.querySelectorAll('.btn-dropdowntable');
 
-    tableCons.classList.toggle("on");
-    seta.classList.toggle("on");
-}
-function showTableAcoes(){
-    var tableAcoes = document.querySelector(".tb-acao");
+for (let i = 0; i < btnDropDown.length; i++) {
+    const classe = btnDropDown[i].classList[1];
+    const idTable = `#tb-${classe}`;
 
-    tableAcoes.classList.toggle("on");
+    btnDropDown[i].onclick = function () {
+        showTable(idTable);
+    }
 }
-function showTableFii(){
-    var tableFii = document.querySelector(".tb-fii");
 
-    tableFii.classList.toggle("on");
+function showTable (idElemento) {
+    document.querySelector(idElemento).classList.toggle('on');
 }
-function showTableCripto(){
-    var tableCripto = document.querySelector(".tb-cripto");
 
-    tableCripto.classList.toggle("on");
-}
 function showAdd(){
     var menuAdd = document.querySelector(".add-menu");
 
     menuAdd.classList.toggle("on");
 }
+
 //Funções para autocomplete
 let ativo = ["ITSA4", "PSSA3", "BBDC4", "NVDC34", "BBAS3"];
 let sortedAtivos = ativo.sort();

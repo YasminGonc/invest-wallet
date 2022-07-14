@@ -5,12 +5,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap" rel="stylesheet">
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
     <link rel="stylesheet" href="style.css">
+
     <title>Invest Wallet</title>
 </head>
 
@@ -81,10 +80,11 @@
                 </div>
             </div>
         </section>
-        <section class="dropdowntable">
-            <button onclick="showTableCons()"><strong>PATRIMÔNIO CONSOLIDADO</strong><span
-                    class="material-symbols-outlined">expand_more</span></button>
-            <table class="tb-cons">
+
+        <section class="dropdowntable consolidado">
+            <h3 class="btn-dropdowntable consolidado">Patrimônio consolidado<img src="images/chevron-down.svg" alt="Seta" class="seta"></h3>
+
+            <table class="tb-consolidado" id="tb-consolidado">
                 <thead>
                     <tr>
                         <th>ATIVO</th>
@@ -123,10 +123,11 @@
                 </tbody>
             </table>
         </section>
-        <section class="dropdowntable">
-            <button onclick="showTableAcoes()"><strong>AÇÕES</strong><span
-                    class="material-symbols-outlined">expand_more</span></button>
-            <table class="tb-acao">
+
+        <section class="dropdowntable acao">
+            <h3 class="btn-dropdowntable acao">Ações<img src="images/chevron-down.svg" alt="Seta"></h3>
+
+            <table class="tb-acao" id="tb-acao">
                 <thead>
                     <tr>
                         <th>%</th>
@@ -151,10 +152,11 @@
                 </tbody>
             </table>
         </section>
-        <section class="dropdowntable">
-            <button onclick="showTableFii()"><strong>FUNDOS IMOBILIÁRIOS</strong><span
-                    class="material-symbols-outlined">expand_more</span></button>
-            <table class="tb-fii">
+
+        <section class="dropdowntable fii">
+            <h3 class="btn-dropdowntable fii">Fundos imobiliários<img src="images/chevron-down.svg" alt="Seta"></h3>
+
+            <table class="tb-fii" id="tb-fii">
                 <thead>
                     <tr>
                         <th>%</th>
@@ -179,10 +181,11 @@
                 </tbody>
             </table>
         </section>
-        <section class="dropdowntable">
-            <button onclick="showTableCripto()"><strong>ETF CRIPTO</strong><span
-                    class="material-symbols-outlined">expand_more</span></button>
-            <table class="tb-cripto">
+        
+        <section class="dropdowntable cripto">
+            <h3 class="btn-dropdowntable cripto">ETF cripto<img src="images/chevron-down.svg" alt="Seta"></h3>
+
+            <table class="tb-cripto" id="tb-cripto">
                 <thead>
                     <tr>
                         <th>%</th>
