@@ -24,8 +24,8 @@ document.querySelector('#close').addEventListener('click', () => {
 });
 
 //Mostrar inputs de acordo com o tipo do ativo
-var tipoAtivo = document.querySelector('#options').selectedIndex;
-var nomeAtivo = document.querySelector('#options')[tipoAtivo].value;
+let tipoAtivo = document.querySelector('#options').selectedIndex;
+let nomeAtivo = document.querySelector('#options')[tipoAtivo].value;
 
 if (nomeAtivo == 'acao' || nomeAtivo == 'fii' || nomeAtivo == 'cripto') {
     document.querySelector('#input-ativo').style.display = 'flex';
