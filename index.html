@@ -17,36 +17,47 @@
     <header>
         <h1>Invest Wallet</h1>
         <nav>
-            <button id="add" onclick="showAdd()">+</button>
+            <button id="add">+</button>
 
             <div class="add-menu">
-                <button id="close" onclick="showAdd()">&times;</button>
+                <button id="close">&times;</button>
 
                 <form>
                     <fieldset class="input">
                         <label for="options">Tipo de ativo</label>
                         <select name="options" id="options">
-                            <option value="null">-</option>
+                            <option value="nenhum">-</option>
                             <option value="acao">Ação</option>
                             <option value="fii">FII</option>
                             <option value="cripto">ETF cripto</option>
+                            <option value="dividendos">Dividendos</option>
                         </select>
                     </fieldset>
 
-                    <fieldset class="input">
+                    <fieldset class="input" id="input-ativo">
                         <label for="ativo">Ativo</label>
-                        <input type="text" name="ativo" id="input">
+                        <input type="text" name="ativo" id="ativo">
                         <ul class="list"></ul>
                     </fieldset>
 
-                    <fieldset class="input">
+                    <fieldset class="input" id="input-qtd">
                         <label for="qtd">Quantidade comprada</label>
                         <input type="number" name="qtd" id="qtd">
                     </fieldset>
 
-                    <fieldset class="input">
+                    <fieldset class="input" id="input-valor">
                         <label for="valor">Valor de compra por unidade</label>
-                        <input type="number" name="valor" id="valor">
+                        <input type="number" name="valor" id="valor" placeholder="R$ 0.00 / ativo">
+                    </fieldset>
+
+                    <fieldset class="input" id="input-dividendos">
+                        <label for="dividendos">Valor recebido</label>
+                        <input type="number" name="dividendos" id="dividendos" placeholder="R$ 0.00">
+                    </fieldset>
+
+                    <fieldset class="input" id="input-data">
+                        <label for="data">Data de compra</label>
+                        <input type="date" name="data" id="data">
                     </fieldset>
 
                     <input type="submit" id="adic" value="Adicionar">

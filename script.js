@@ -1,4 +1,4 @@
-//Funções para aparecer as tabelas quando clicar
+//Mostrar tabelas
 const btnDropDown = document.querySelectorAll('.btn-dropdowntable');
 
 for (let i = 0; i < btnDropDown.length; i++) {
@@ -14,17 +14,38 @@ function showTable (idElemento) {
     document.querySelector(idElemento).classList.toggle('on');
 }
 
-function showAdd(){
-    var menuAdd = document.querySelector(".add-menu");
+//Mostrar e ocultar menu adicionar
+document.querySelector('#add').addEventListener('click', () => {
+    document.querySelector('.add-menu').classList.toggle('on');
+});
 
-    menuAdd.classList.toggle("on");
+document.querySelector('#close').addEventListener('click', () => {
+    document.querySelector('.add-menu').classList.toggle('on');
+});
+
+//Mostrar inputs de acordo com o tipo do ativo
+var tipoAtivo = document.querySelector('#options').selectedIndex;
+var nomeAtivo = document.querySelector('#options')[tipoAtivo].value;
+
+if (nomeAtivo == 'acao' || nomeAtivo == 'fii' || nomeAtivo == 'cripto') {
+    document.querySelector('#input-ativo').style.display = 'flex';
+    document.querySelector('#input-qtd').style.display = 'flex';
+    document.querySelector('#input-valor').style.display = 'flex';
+    document.querySelector('#input-data').style.display = 'flex';
+    document.querySelector('#adic').style.display = 'block';
+
+} else if (nomeAtivo == 'dividendos') {
+    document.querySelector('#input-dividendos').style.display = 'flex';
+    document.querySelector('#input-data').style.display = 'flex';
+    document.querySelector('#adic').style.display = 'block';
+    
 }
 
-//Funções para autocomplete
+//Autocomplete
 let ativo = ["ITSA4", "PSSA3", "BBDC4", "NVDC34", "BBAS3"];
 let sortedAtivos = ativo.sort();
 
-let input = document.querySelector("#input");
+let input = document.querySelector("#ativo");
 
 input.addEventListener("keyup", (e) => {
     //Apaga todos os itens caso o usuário apague ou adicione novas letras
@@ -58,3 +79,8 @@ function removeElements(){
         item.remove();
      });
 }
+
+
+
+
+//Preencher array com botão submit form.addEventListener('submit', função ())const valueTipoAtivo = tipoAtivo
