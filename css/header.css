@@ -1,0 +1,102 @@
+:root {
+    --cor1: #756C6B;
+    --cor2: #89CFCC;
+    --cor3: #ffffff;
+    --cor4: #E7E7E7;
+}
+* {
+    font-family: 'Lato', sans-serif;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: var(--cor1);
+}
+header img {
+    width: 60%;
+}
+header button {
+    font-size: 2rem;
+    background-color: transparent;
+    border: transparent;
+    color: var(--cor3);
+    cursor: pointer;
+}
+.add-menu {
+    display: none;
+}
+.add-menu.on {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    gap: 1rem;
+    height: 100vh;
+    width: 20vw;
+    top: 0;
+    right: 0;
+    padding: 2rem;
+    background-color: var(--cor3);
+}
+.add-menu form fieldset {
+    margin-bottom: 1rem;
+}
+#close {
+    color: var(--cor1);
+}
+.input {
+    display: flex;
+    flex-direction: column;
+    border: none;
+}
+.input label {
+    font-size: 0.8rem;
+    margin-bottom: 0.5rem;
+}
+#options, #ativo, #qtd, #valor, #data, #dividendos { 
+    width: 10rem;
+    height: 1.5rem;
+    padding-left: 0.3rem;
+    background: var(--cor4);
+    border: 0rem solid var(--cor2);
+    border-radius: 0.2rem;
+}
+#options:focus, #ativo:focus, #qtd:focus, #valor:focus, #data:focus, #dividendos:focus {
+    outline: none;
+}
+#qtd::-webkit-outer-spin-button, #qtd::-webkit-inner-spin-button, #valor::-webkit-outer-spin-button, #valor::-webkit-inner-spin-button, #dividendos::-webkit-outer-spin-button, #dividendos::-webkit-inner-spin-button { /*Tira o contador do input number*/
+    -webkit-appearance: none;
+    margin: 0;
+}
+#input-ativo, #input-qtd, #input-valor, #input-data, #input-dividendos, #adic {
+    display: none;
+}
+#adic {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    background-color: var(--cor2);
+    color: var(--cor1);
+    width: 10rem;
+    padding: 0.4rem;
+    border-radius: 0.4rem;
+    border: none;
+    transition: 400ms;
+}
+#adic:focus {
+    background-color: var(--cor1);
+    color: var(--cor2);
+    border: 0.1rem solid var(--cor1);
+}
+.list {
+    width: 100%;
+    font-size: 0.7rem;
+    background-color: var(--cor1);
+    list-style: none;
+}
+.list-items {
+    width: 100%;
+    padding: 10px 5px;
+}

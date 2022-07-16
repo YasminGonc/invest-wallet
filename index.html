@@ -8,14 +8,17 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/info-geral.css">
+    <link rel="stylesheet" href="css/style-index.css">
 
-    <title>Invest Wallet</title>
+    <title>Invest Wallet 2.0</title>
 </head>
 
 <body>
     <header>
-        <h1>Invest Wallet</h1>
+        <h1><img src="images/logo.png" alt="Logo Invest Wallet"></h1>
         <nav>
             <button id="add">+</button>
 
@@ -65,165 +68,69 @@
             </div>
         </nav>
     </header>
+
     <main>
-        <section id="info-geral">
-            <div id="info-left">
-                <div class="upper">
-                    <p class="txt-upper">Total do patrimônio</p>
-                    <p class="txt-value"><span>R$</span> 10.000,00</p>
+        <section class="info-geral">
+            <img src="images/foto.png" alt="Foto usuário">
+            <h2>Yasmin Gonçalves</h2>
+
+            <div class="info-carteira">
+                <div>
+                    <h3>Aportado</h3>
+                    <p><span>R$</span> 9.500</p>
                 </div>
-                <div class="bottom">
-                    <p>Retorno mensal: 5%</p>
-                    <p>Retorno anual: 10%</p>
-                    <p>Dividendos recebidos no ano: R$ 135,00</p>
+                <div>
+                    <h3>Patrimônio</h3>
+                    <p><span>R$</span> 10.000</p>
                 </div>
-            </div>
-            <div id="info-center">
-                <p>Gráfico</p>
-            </div>
-            <div id="info-right">
-                <div class="upper">
-                    <p class="txt-upper">Patrimônio investido</p>
-                    <p class="txt-value"><span>R$</span> 9.500,00</p>
+                <div>
+                    <h3>Dividendo anual</h3>
+                    <p><span>R$</span> 200</p>
                 </div>
-                <div class="bottom">
-                    <p>Legenda do gráfico</p>
+                <div>
+                    <h3>Retorno</h3>
+                    <p>5%</p>
                 </div>
             </div>
         </section>
 
-        <section class="dropdowntable consolidado">
-            <h3 class="btn-dropdowntable consolidado">Patrimônio consolidado<img src="images/chevron-down.svg" alt="Seta" class="seta"></h3>
+        <div class="aside-main">
+            <aside>
+                <ul>
+                    <li class="pagina-atual">
+                        <img src="images/home.svg" alt="Ícone Home">
+                        <p>Dashbord</p>
+                    </li>
+                    <li>
+                        <img src="images/trending-up.svg" alt="Ícone ações">
+                        <p>Ações</p>
+                    </li>
+                    <li>
+                        <img src="images/truck.svg" alt="Ícone FIIs">
+                        <p>FIIs</p>
+                    </li>
+                    <li>
+                        <img src="images/loader.svg" alt="Ícone ETF">
+                        <p>ETF</p>
+                    </li>
+                    <li>
+                        <img src="images/dollar-sign.svg" alt="Ícone dividendos">
+                        <p>Dividendos</p>
+                    </li>
+                </ul>
+            </aside>
 
-            <table class="tb-consolidado" id="tb-consolidado">
-                <thead>
-                    <tr>
-                        <th>ATIVO</th>
-                        <th>VALOR INVESTIDO</th>
-                        <th>VALOR ATUAL</th>
-                        <th>LUCRO/PREJUÍZO</th>
-                        <th>LUCRO/PREJUÍZO</th>
-                        <th>PESO ATUAL</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>AÇÕES</td>
-                        <td>R$ 1.216,64</td>
-                        <td>R$ 1.338,02</td>
-                        <td>R$ 121,48</td>
-                        <td>9,99%</td>
-                        <td>15,89%</td>
-                    </tr>
-                    <tr>
-                        <td>FIIS</td>
-                        <td>R$ 2.312,89</td>
-                        <td>R$ 2.222,72</td>
-                        <td>R$ 90,17</td>
-                        <td>3,9%</td>
-                        <td>26,40%</td>
-                    </tr>
-                    <tr>
-                        <td>CRIPTO</td>
-                        <td>R$ 57,10</td>
-                        <td>R$ 47,30</td>
-                        <td>R$ 9,80</td>
-                        <td>17,16%</td>
-                        <td>0,56%</td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
-
-        <section class="dropdowntable acao">
-            <h3 class="btn-dropdowntable acao">Ações<img src="images/chevron-down.svg" alt="Seta"></h3>
-
-            <table class="tb-acao" id="tb-acao">
-                <thead>
-                    <tr>
-                        <th>%</th>
-                        <th>ATIVO</th>
-                        <th>QUANTIDADE</th>
-                        <th>PREÇO MÉDIO DESC</th>
-                        <th>VALOR APORTADO</th>
-                        <th>PREÇO MERCADO</th>
-                        <th>VALOR MERCADO</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>17%</td>
-                        <td>ITSA4</td>
-                        <td>23</td>
-                        <td>R$ 9,49</td>
-                        <td>R$ 218,32</td>
-                        <td>R$ 9,59</td>
-                        <td>R$ 220,57</td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
-
-        <section class="dropdowntable fii">
-            <h3 class="btn-dropdowntable fii">Fundos imobiliários<img src="images/chevron-down.svg" alt="Seta"></h3>
-
-            <table class="tb-fii" id="tb-fii">
-                <thead>
-                    <tr>
-                        <th>%</th>
-                        <th>ATIVO</th>
-                        <th>QUANTIDADE</th>
-                        <th>PREÇO MÉDIO DESC</th>
-                        <th>VALOR APORTADO</th>
-                        <th>PREÇO MERCADO</th>
-                        <th>VALOR MERCADO</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>17%</td>
-                        <td>HGLG11</td>
-                        <td>23</td>
-                        <td>R$ 9,49</td>
-                        <td>R$ 218,32</td>
-                        <td>R$ 9,59</td>
-                        <td>R$ 220,57</td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
-        
-        <section class="dropdowntable cripto">
-            <h3 class="btn-dropdowntable cripto">ETF cripto<img src="images/chevron-down.svg" alt="Seta"></h3>
-
-            <table class="tb-cripto" id="tb-cripto">
-                <thead>
-                    <tr>
-                        <th>%</th>
-                        <th>ATIVO</th>
-                        <th>QUANTIDADE</th>
-                        <th>PREÇO MÉDIO DESC</th>
-                        <th>VALOR APORTADO</th>
-                        <th>PREÇO MERCADO</th>
-                        <th>VALOR MERCADO</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>17%</td>
-                        <td>QBTC11</td>
-                        <td>23</td>
-                        <td>R$ 9,49</td>
-                        <td>R$ 218,32</td>
-                        <td>R$ 9,59</td>
-                        <td>R$ 220,57</td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
+            <div class="main">
+                <div class="graficos">
+                    <p>Gráficos</p>
+                </div>
+               
+            </div>
+        </div>
     </main>
 
     <script src="script.js"></script>
+
 </body>
 
 </html>

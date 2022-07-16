@@ -1,0 +1,39 @@
+:root {
+    --cor1: #756C6B;
+    --cor2: #89CFCC;
+    --cor3: #ffffff;
+    --cor4: #E7E7E7;
+}
+* {
+    font-family: 'Lato', sans-serif;
+}
+.info-geral {
+    background: var(--cor2);
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.info-geral img {
+    width: 5%;
+}
+.info-carteira {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    width: 80%;
+    
+}
+.info-carteira h3 {
+    color: var(--cor1);
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 0.2rem;
+}
+.info-carteira p {
+    color: var(--cor3);
+    font-size: 1.5rem;
+}
+.info-carteira p span {
+    font-size: 1rem;
+}

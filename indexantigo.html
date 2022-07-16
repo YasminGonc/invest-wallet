@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+
+    <title>Invest Wallet</title>
+</head>
+
+<body>
+    <header>
+        <h1>Invest Wallet</h1>
+        <nav>
+            <button id="add">+</button>
+
+            <div class="add-menu">
+                <button id="close">&times;</button>
+
+                <form>
+                    <fieldset class="input">
+                        <label for="options">Tipo de ativo</label>
+                        <select name="options" id="options">
+                            <option value="nenhum">-</option>
+                            <option value="acao">Ação</option>
+                            <option value="fii">FII</option>
+                            <option value="cripto">ETF cripto</option>
+                            <option value="dividendos">Dividendos</option>
+                        </select>
+                    </fieldset>
+
+                    <fieldset class="input" id="input-ativo">
+                        <label for="ativo">Ativo</label>
+                        <input type="text" name="ativo" id="ativo">
+                        <ul class="list"></ul>
+                    </fieldset>
+
+                    <fieldset class="input" id="input-qtd">
+                        <label for="qtd">Quantidade comprada</label>
+                        <input type="number" name="qtd" id="qtd">
+                    </fieldset>
+
+                    <fieldset class="input" id="input-valor">
+                        <label for="valor">Valor de compra por unidade</label>
+                        <input type="number" name="valor" id="valor" placeholder="R$ 0.00 / ativo">
+                    </fieldset>
+
+                    <fieldset class="input" id="input-dividendos">
+                        <label for="dividendos">Valor recebido</label>
+                        <input type="number" name="dividendos" id="dividendos" placeholder="R$ 0.00">
+                    </fieldset>
+
+                    <fieldset class="input" id="input-data">
+                        <label for="data">Data de compra</label>
+                        <input type="date" name="data" id="data">
+                    </fieldset>
+
+                    <input type="submit" id="adic" value="Adicionar">
+                </form>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section id="info-geral">
+            <div id="info-left">
+                <div class="upper">
+                    <p class="txt-upper">Total do patrimônio</p>
+                    <p class="txt-value"><span>R$</span> 10.000,00</p>
+                </div>
+                <div class="bottom">
+                    <p>Retorno mensal: 5%</p>
+                    <p>Retorno anual: 10%</p>
+                    <p>Dividendos recebidos no ano: R$ 135,00</p>
+                </div>
+            </div>
+            <div id="info-center">
+                <p>Gráfico</p>
+            </div>
+            <div id="info-right">
+                <div class="upper">
+                    <p class="txt-upper">Patrimônio investido</p>
+                    <p class="txt-value"><span>R$</span> 9.500,00</p>
+                </div>
+                <div class="bottom">
+                    <p>Legenda do gráfico</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="dropdowntable consolidado">
+            <h3 class="btn-dropdowntable consolidado">Patrimônio consolidado<img src="images/chevron-down.svg" alt="Seta" class="seta"></h3>
+
+            <table class="tb-consolidado" id="tb-consolidado">
+                <thead>
+                    <tr>
+                        <th>ATIVO</th>
+                        <th>VALOR INVESTIDO</th>
+                        <th>VALOR ATUAL</th>
+                        <th>LUCRO/PREJUÍZO</th>
+                        <th>LUCRO/PREJUÍZO</th>
+                        <th>PESO ATUAL</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>AÇÕES</td>
+                        <td>R$ 1.216,64</td>
+                        <td>R$ 1.338,02</td>
+                        <td>R$ 121,48</td>
+                        <td>9,99%</td>
+                        <td>15,89%</td>
+                    </tr>
+                    <tr>
+                        <td>FIIS</td>
+                        <td>R$ 2.312,89</td>
+                        <td>R$ 2.222,72</td>
+                        <td>R$ 90,17</td>
+                        <td>3,9%</td>
+                        <td>26,40%</td>
+                    </tr>
+                    <tr>
+                        <td>CRIPTO</td>
+                        <td>R$ 57,10</td>
+                        <td>R$ 47,30</td>
+                        <td>R$ 9,80</td>
+                        <td>17,16%</td>
+                        <td>0,56%</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="dropdowntable acao">
+            <h3 class="btn-dropdowntable acao">Ações<img src="images/chevron-down.svg" alt="Seta"></h3>
+
+            <table class="tb-acao" id="tb-acao">
+                <thead>
+                    <tr>
+                        <th>%</th>
+                        <th>ATIVO</th>
+                        <th>QUANTIDADE</th>
+                        <th>PREÇO MÉDIO DESC</th>
+                        <th>VALOR APORTADO</th>
+                        <th>PREÇO MERCADO</th>
+                        <th>VALOR MERCADO</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>17%</td>
+                        <td>ITSA4</td>
+                        <td>23</td>
+                        <td>R$ 9,49</td>
+                        <td>R$ 218,32</td>
+                        <td>R$ 9,59</td>
+                        <td>R$ 220,57</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="dropdowntable fii">
+            <h3 class="btn-dropdowntable fii">Fundos imobiliários<img src="images/chevron-down.svg" alt="Seta"></h3>
+
+            <table class="tb-fii" id="tb-fii">
+                <thead>
+                    <tr>
+                        <th>%</th>
+                        <th>ATIVO</th>
+                        <th>QUANTIDADE</th>
+                        <th>PREÇO MÉDIO DESC</th>
+                        <th>VALOR APORTADO</th>
+                        <th>PREÇO MERCADO</th>
+                        <th>VALOR MERCADO</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>17%</td>
+                        <td>HGLG11</td>
+                        <td>23</td>
+                        <td>R$ 9,49</td>
+                        <td>R$ 218,32</td>
+                        <td>R$ 9,59</td>
+                        <td>R$ 220,57</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        
+        <section class="dropdowntable cripto">
+            <h3 class="btn-dropdowntable cripto">ETF cripto<img src="images/chevron-down.svg" alt="Seta"></h3>
+
+            <table class="tb-cripto" id="tb-cripto">
+                <thead>
+                    <tr>
+                        <th>%</th>
+                        <th>ATIVO</th>
+                        <th>QUANTIDADE</th>
+                        <th>PREÇO MÉDIO DESC</th>
+                        <th>VALOR APORTADO</th>
+                        <th>PREÇO MERCADO</th>
+                        <th>VALOR MERCADO</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>17%</td>
+                        <td>QBTC11</td>
+                        <td>23</td>
+                        <td>R$ 9,49</td>
+                        <td>R$ 218,32</td>
+                        <td>R$ 9,59</td>
+                        <td>R$ 220,57</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
