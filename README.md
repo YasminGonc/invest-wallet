@@ -4,7 +4,6 @@ A InvestWallet nasceu da vontade em organizar minha carteira de investimentos de
 A InvestWallet será um canal capaz de organizar a carteira de investimentos de ações, fundos imobiliários, BDRs e renda fixa, acompanhando de forma clara e rápida como está a evolução da carteira.
 
 ## Recursos pensados para a aplicação
-<ul>
  <li> Patrimônio total consolidado;</li>
  <li> Retorno da carteira;</li>
  <li>Retorno mensal de dividendos;</li>
@@ -20,5 +19,10 @@ A InvestWallet será um canal capaz de organizar a carteira de investimentos de 
 Todos os ativos disponíveis nessa aplicação estão baseados na minha carteira pessoal. Os ativos contidos nela são de ordem pessoal, portanto são ativos que fazem sentido para os meus objetivos. Sendo assim, <strong>não</strong> é uma recomendação de compra.
 
 ## Fase atual do projeto
-Construção das telas iniciais com o <a href="https://www.figma.com/file/P78MIZRORbH7NboQyGsKXu/Invest-Wallet?node-id=0%3A1">Figma</a>.
+Capturar, armazenar informações e cálculos.
+
+## Fases implantadas
+<li>Tela <a href="https://www.figma.com/file/P78MIZRORbH7NboQyGsKXu/Invest-Wallet?node-id=0%3A1">Figma</a>;</li>
+<li>Tela inicial;</li>
+<li>Menu adicionar dinâmico;</li>
 
