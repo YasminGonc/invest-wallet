@@ -10,7 +10,7 @@ for (let i = 0; i < btnDropDown.length; i++) {
     }
 }
 
-function showTable (idElemento) {
+function showTable(idElemento) {
     document.querySelector(idElemento).classList.toggle('on');
 }
 
@@ -24,22 +24,28 @@ document.querySelector('#close').addEventListener('click', () => {
 });
 
 //Mostrar inputs de acordo com o tipo do ativo
-let tipoAtivo = document.querySelector('#options').selectedIndex;
-let nomeAtivo = document.querySelector('#options')[tipoAtivo].value;
+var selectElement = document.querySelector('#options');
 
-if (nomeAtivo == 'acao' || nomeAtivo == 'fii' || nomeAtivo == 'cripto') {
-    document.querySelector('#input-ativo').style.display = 'flex';
-    document.querySelector('#input-qtd').style.display = 'flex';
-    document.querySelector('#input-valor').style.display = 'flex';
-    document.querySelector('#input-data').style.display = 'flex';
-    document.querySelector('#adic').style.display = 'block';
+selectElement.addEventListener('change', (evento) => {
+    var tipoAtivo = document.querySelector('#options').selectedIndex;
+    var nomeAtivo = document.querySelector('#options')[tipoAtivo].value;
 
-} else if (nomeAtivo == 'dividendos') {
-    document.querySelector('#input-dividendos').style.display = 'flex';
-    document.querySelector('#input-data').style.display = 'flex';
-    document.querySelector('#adic').style.display = 'block';
-    
-}
+    if (nomeAtivo == 'acao' || nomeAtivo == 'fii' || nomeAtivo == 'cripto') {
+        document.querySelector('#input-ativo').style.display = 'flex';
+        document.querySelector('#input-qtd').style.display = 'flex';
+        document.querySelector('#input-valor').style.display = 'flex';
+        document.querySelector('#input-data').style.display = 'flex';
+        document.querySelector('#adic').style.display = 'block';
+
+    } else if (nomeAtivo == 'dividendos') {
+        document.querySelector('#input-qtd').style.display = 'none';
+        document.querySelector('#input-valor').style.display = 'none';
+        document.querySelector('#input-dividendos').style.display = 'flex';
+        document.querySelector('#input-data').style.display = 'flex';
+        document.querySelector('#adic').style.display = 'block';
+
+    }
+});
 
 //Autocomplete
 let ativo = ["ITSA4", "PSSA3", "BBDC4", "NVDC34", "BBAS3"];
@@ -51,17 +57,17 @@ input.addEventListener("keyup", (e) => {
     //Apaga todos os itens caso o usuário apague ou adicione novas letras
     removeElements();
     //Loop no array
-    for(let i of sortedAtivos){
+    for (let i of sortedAtivos) {
         //converte o input em minúsculo e compara com o array
-        if (i.toLowerCase().startsWith(input.value.toLowerCase()) && input.value != ""){
+        if (i.toLowerCase().startsWith(input.value.toLowerCase()) && input.value != "") {
             //caso verdadeiro cria o elemnto li
             let listItem = document.createElement("li");
             // lis criados vão ter a mesma classe
             listItem.classList.add("list-items");
             listItem.style.cursor = "pointer";
-            listItem.setAttribute("onclick", "displayAtivos('" + i +"')");
+            listItem.setAttribute("onclick", "displayAtivos('" + i + "')");
             //partes iguais em bold
-            let word = "<b>" + i.substr(0, input.value.length) +"</b>";
+            let word = "<b>" + i.substr(0, input.value.length) + "</b>";
             word += i.substr(input.value.length);
             //Mostra o valor no array
             listItem.innerHTML = word;
@@ -69,15 +75,15 @@ input.addEventListener("keyup", (e) => {
         }
     }
 });
-function displayAtivos(value){
+function displayAtivos(value) {
     input.value = value;
     removeElements();
 }
-function removeElements(){
+function removeElements() {
     let items = document.querySelectorAll(".list-items");
-     items.forEach((item) => {
+    items.forEach((item) => {
         item.remove();
-     });
+    });
 }
 
 
