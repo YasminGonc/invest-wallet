@@ -9,6 +9,9 @@ document.querySelector('#close').addEventListener('click', () => {
 
 //Mostrar inputs de acordo com o tipo do ativo
 var selectElement = document.querySelector('#options');
+const form = document.querySelector('#form');
+let ativoArray = [];
+//criar mais arrays
 
 selectElement.addEventListener('change', (evento) => {
     var tipoAtivo = document.querySelector('#options').selectedIndex;
@@ -22,6 +25,7 @@ selectElement.addEventListener('change', (evento) => {
         document.querySelector('#adic').style.display = 'block';
 
     } else if (nomeAtivo == 'dividendos') {
+        document.querySelector('#input-ativo').style.display = 'flex';
         document.querySelector('#input-qtd').style.display = 'none';
         document.querySelector('#input-valor').style.display = 'none';
         document.querySelector('#input-dividendos').style.display = 'flex';
@@ -37,6 +41,28 @@ selectElement.addEventListener('change', (evento) => {
         document.querySelector('#input-dividendos').style.display = 'none';
     }
 
+    function FormAtivo(nomeAtivo, qtd, valor, data) {
+        this.nomeAtivo = nomeAtivo;
+        this.qtd = qtd;
+        this.valor = valor;
+        this.data = data;
+    }
+    
+    function enviar(ativoValue, qtdValue, valorValue, dataValue) {
+        let novoAtivo = new FormAtivo(ativoValue, qtdValue, valorValue, dataValue);
+        acaoArray.push(novoAtivo);
+    }
+    
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const ativoValue = document.querySelector('#ativo').value;
+        const qtdValue = Number(document.querySelector('#qtd').value);
+        const valorValue = Number(document.querySelector('#valor').value);
+        const dataValue = document.querySelector('#data').value;
+        enviar(ativoValue, qtdValue, valorValue, dataValue)
+        console.log(acaoArray);
+    });
+    
 });
 
 
@@ -79,4 +105,50 @@ function removeElements() {
     });
 }
 //Preencher array com botão submit form.addEventListener('submit', função ())const valueTipoAtivo = tipoAtivo
+
+
+
+//submit, chama enviar
+
+/*function enviar() {
+    if (nomeAtivoValue == 'acao') {
+        formAcao = [
+            {
+                nomeAtivo: ativoValue,
+                qtd: qtdValue,
+                valor: valorValue,
+                data: dataValue
+            }
+        ]
+    } else if (nomeAtivoValue == 'fii') {
+        var formFii = [
+            {
+                nomeAtivo: ativoValue,
+                qtd: qtdValue,
+                valor: valorValue,
+                data: dataValue
+            }
+        ]
+    } else if (nomeAtivoValue == 'cripto') {
+        var formCripto = [
+            {
+                nomeAtivo: ativoValue,
+                qtd: qtdValue,
+                valor: valorValue,
+                data: dataValue
+            }
+        ]
+    } else if (nomeAtivoValue == 'dividendos') {
+        var formDividendos = [
+            {
+                nomeAtivo: ativoValue,
+                qtd: qtdValue,
+                dividendos: dividendosValue,
+                data: dataValue
+            }
+        ]
+    }
+
+
+}*/
 
