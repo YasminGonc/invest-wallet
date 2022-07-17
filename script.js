@@ -54,7 +54,7 @@ selectElement.addEventListener('change', (evento) => {
     }
     
     form.addEventListener('submit', (e) => {
-        e.preventDefault();
+        e.preventDefault(); //no refresh
         const ativoValue = document.querySelector('#ativo').value;
         const qtdValue = Number(document.querySelector('#qtd').value);
         const valorValue = Number(document.querySelector('#valor').value);
