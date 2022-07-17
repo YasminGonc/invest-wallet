@@ -1,19 +1,3 @@
-//Mostrar tabelas
-const btnDropDown = document.querySelectorAll('.btn-dropdowntable');
-
-for (let i = 0; i < btnDropDown.length; i++) {
-    const classe = btnDropDown[i].classList[1];
-    const idTable = `#tb-${classe}`;
-
-    btnDropDown[i].onclick = function () {
-        showTable(idTable);
-    }
-}
-
-function showTable(idElemento) {
-    document.querySelector(idElemento).classList.toggle('on');
-}
-
 //Mostrar e ocultar menu adicionar
 document.querySelector('#add').addEventListener('click', () => {
     document.querySelector('.add-menu').classList.toggle('on');
@@ -44,8 +28,17 @@ selectElement.addEventListener('change', (evento) => {
         document.querySelector('#input-data').style.display = 'flex';
         document.querySelector('#adic').style.display = 'block';
 
+    } else {
+        document.querySelector('#input-ativo').style.display = 'none';
+        document.querySelector('#input-qtd').style.display = 'none';
+        document.querySelector('#input-valor').style.display = 'none';
+        document.querySelector('#input-data').style.display = 'none';
+        document.querySelector('#adic').style.display = 'none';
+        document.querySelector('#input-dividendos').style.display = 'none';
     }
+
 });
+
 
 //Autocomplete
 let ativo = ["ITSA4", "PSSA3", "BBDC4", "NVDC34", "BBAS3"];
@@ -85,8 +78,5 @@ function removeElements() {
         item.remove();
     });
 }
-
-
-
-
 //Preencher array com botão submit form.addEventListener('submit', função ())const valueTipoAtivo = tipoAtivo
+
