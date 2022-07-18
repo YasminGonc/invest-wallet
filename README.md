@@ -14,7 +14,10 @@ A InvestWallet será um canal capaz de organizar a carteira de investimentos de 
  <li>Atualização do valor dos ativos baseados na cotação atual da bolsa de valores;</li>
  <li>Notificação de quando um ativo entra na região de preço alvo;</li>
  <li>Valuation de fundos imobiliários baseados na NTN-B e pré-definições fornecidas pelo usuário.</li>
- 
+
+## Link do projeto
+https://yasmingonc.github.io/invest-wallet/
+
 ## Considerações importantes
 Todos os ativos disponíveis nessa aplicação estão baseados na minha carteira pessoal. Os ativos contidos nela são de ordem pessoal, portanto são ativos que fazem sentido para os meus objetivos. Sendo assim, <strong>não</strong> é uma recomendação de compra.
 
