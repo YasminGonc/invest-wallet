@@ -11,7 +11,6 @@ document.querySelector('#close').addEventListener('click', () => {
 var selectElement = document.querySelector('#options');
 const form = document.querySelector('#form');
 let ativoArray = [];
-//criar mais arrays
 
 selectElement.addEventListener('change', (evento) => {
     var tipoAtivo = document.querySelector('#options').selectedIndex;
@@ -40,17 +39,16 @@ selectElement.addEventListener('change', (evento) => {
         document.querySelector('#adic').style.display = 'none';
         document.querySelector('#input-dividendos').style.display = 'none';
     }
-
-    function FormAtivo(nomeAtivo, qtd, valor, data) {
-        this.nomeAtivo = nomeAtivo;
-        this.qtd = qtd;
-        this.valor = valor;
-        this.data = data;
-    }
     
-    function enviar(ativoValue, qtdValue, valorValue, dataValue) {
-        let novoAtivo = new FormAtivo(ativoValue, qtdValue, valorValue, dataValue);
-        acaoArray.push(novoAtivo);
+    function enviar(nomeAtivo, ativoValue, qtdValue, valorValue, dividendosValue, dataValue) {
+        ativoArray.push({
+            nomeAtivo: nomeAtivo,
+            ativoValue: ativoValue,
+            qtdValue: qtdValue,
+            valorValue: valorValue,
+            dividendosValue: dividendosValue,
+            dataValue: dataValue
+        });
     }
     
     form.addEventListener('submit', (e) => {
@@ -58,9 +56,10 @@ selectElement.addEventListener('change', (evento) => {
         const ativoValue = document.querySelector('#ativo').value;
         const qtdValue = Number(document.querySelector('#qtd').value);
         const valorValue = Number(document.querySelector('#valor').value);
+        const dividendosValue = Number(document.querySelector('#input-dividendos').value);
         const dataValue = document.querySelector('#data').value;
-        enviar(ativoValue, qtdValue, valorValue, dataValue)
-        console.log(acaoArray);
+        enviar(nomeAtivo, ativoValue, qtdValue, valorValue, dividendosValue, dataValue)
+        console.log(ativoArray);
     });
     
 });

@@ -93,8 +93,7 @@ header button {
 .list {
     width: 100%;
     font-size: 0.7rem;
-    background-color: var(--cor1);
-    list-style: none;
+    background-color: var(--cor4);
 }
 .list-items {
     width: 100%;
