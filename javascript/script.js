@@ -22,6 +22,7 @@ selectElement.addEventListener('change', (evento) => {
         document.querySelector('#input-valor').style.display = 'flex';
         document.querySelector('#input-data').style.display = 'flex';
         document.querySelector('#adic').style.display = 'block';
+        document.querySelector('#input-dividendos').style.display = 'none';
 
     } else if (nomeAtivo == 'dividendos') {
         document.querySelector('#input-ativo').style.display = 'flex';
