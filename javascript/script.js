@@ -74,9 +74,9 @@ selectElement.addEventListener('change', (evento) => {
 
         console.log(ativoArray);
 
-        ativoArray.forEach((elemento) => { //está recebendo valores a mais 
+        /*ativoArray.forEach((elemento) => { //está recebendo valores a mais 
             somaQuant += elemento.qtd;
-        });
+        });*/
     
         console.log(somaQuant);
     });
