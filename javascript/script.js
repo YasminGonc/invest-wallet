@@ -1,22 +1,25 @@
+const btnMenuAdd = document.querySelector('.add-menu');
 //Mostrar e ocultar menu adicionar
 document.querySelector('#add').addEventListener('click', () => {
-    document.querySelector('.add-menu').classList.toggle('on');
+    btnMenuAdd.classList.add('on');
 });
 
 document.querySelector('#close').addEventListener('click', () => {
-    document.querySelector('.add-menu').classList.toggle('on');
+    btnMenuAdd.classList.remove('on');
 });
 
-//Mostrar inputs de acordo com o tipo do ativo
-var selectElement = document.querySelector('#options');
+let somaQuant = 0;
+
+const selectElement = document.querySelector('#options');
 const form = document.querySelector('#form');
-let ativoArray = [];
+let ativoArray = /*JSON.parse(localStorage.getItem('ativoArray')) ||*/[];
 
 selectElement.addEventListener('change', (evento) => {
-    var tipoAtivo = document.querySelector('#options').selectedIndex;
-    var nomeAtivo = document.querySelector('#options')[tipoAtivo].value;
+    const options = document.querySelector('#options');
+    const indiceAtivo = options.selectedIndex;
+    const tipoAtivo = options[indiceAtivo];
 
-    if (nomeAtivo == 'acao' || nomeAtivo == 'fii' || nomeAtivo == 'cripto') {
+    if (tipoAtivo.value == 'acao' || tipoAtivo.value == 'fii' || tipoAtivo.value == 'cripto') {//Mostrar inputs de acordo com o tipo do ativo
         document.querySelector('#input-ativo').style.display = 'flex';
         document.querySelector('#input-qtd').style.display = 'flex';
         document.querySelector('#input-valor').style.display = 'flex';
@@ -24,7 +27,7 @@ selectElement.addEventListener('change', (evento) => {
         document.querySelector('#adic').style.display = 'block';
         document.querySelector('#input-dividendos').style.display = 'none';
 
-    } else if (nomeAtivo == 'dividendos') {
+    } else if (tipoAtivo.value == 'dividendos') {
         document.querySelector('#input-ativo').style.display = 'flex';
         document.querySelector('#input-qtd').style.display = 'none';
         document.querySelector('#input-valor').style.display = 'none';
@@ -41,29 +44,45 @@ selectElement.addEventListener('change', (evento) => {
         document.querySelector('#input-dividendos').style.display = 'none';
     }
     
-    function enviar(nomeAtivo, ativoValue, qtdValue, valorValue, dividendosValue, dataValue) {
-        ativoArray.push({
-            nomeAtivo: nomeAtivo,
-            ativoValue: ativoValue,
-            qtdValue: qtdValue,
-            valorValue: valorValue,
-            dividendosValue: dividendosValue,
-            dataValue: dataValue
-        });
-    }
-    
-    form.addEventListener('submit', (e) => {
-        e.preventDefault(); //no refresh
-        const ativoValue = document.querySelector('#ativo').value;
-        const qtdValue = Number(document.querySelector('#qtd').value);
-        const valorValue = Number(document.querySelector('#valor').value);
-        const dividendosValue = Number(document.querySelector('#input-dividendos').value);
-        const dataValue = document.querySelector('#data').value;
-        enviar(nomeAtivo, ativoValue, qtdValue, valorValue, dividendosValue, dataValue)
+    form.addEventListener('submit', (evento) => {
+        evento.preventDefault(); //no refresh
+        const ativo = evento.target.elements['ativo'];
+        const qtd = evento.target.elements['qtd'];
+        const valor = evento.target.elements['valor'];
+        const dividendos = evento.target.elements['dividendos'];
+        const data = evento.target.elements['data'];
+
+        const itemAdicionado = {
+            'tipoAtivo': tipoAtivo.value,
+            'ativo': ativo.value,
+            'qtd': Number(qtd.value),
+            'valor': valor.value,
+            'dividendos': dividendos.value,
+            'data': data.value
+        }
+
+        ativoArray.push(itemAdicionado);
+
+        options.value = options[0];
+        ativo.value = "";
+        qtd.value = "";
+        valor.value = "";
+        dividendos.value = "";
+        data.value = "";
+
+        //localStorage.setItem('ativoArray', JSON.stringify(ativoArray));
+
         console.log(ativoArray);
+
+        ativoArray.forEach((elemento) => { //está recebendo valores a mais 
+            somaQuant += elemento.qtd;
+        });
+    
+        console.log(somaQuant);
     });
     
 });
+
 
 
 //Autocomplete
@@ -104,51 +123,3 @@ function removeElements() {
         item.remove();
     });
 }
-//Preencher array com botão submit form.addEventListener('submit', função ())const valueTipoAtivo = tipoAtivo
-
-
-
-//submit, chama enviar
-
-/*function enviar() {
-    if (nomeAtivoValue == 'acao') {
-        formAcao = [
-            {
-                nomeAtivo: ativoValue,
-                qtd: qtdValue,
-                valor: valorValue,
-                data: dataValue
-            }
-        ]
-    } else if (nomeAtivoValue == 'fii') {
-        var formFii = [
-            {
-                nomeAtivo: ativoValue,
-                qtd: qtdValue,
-                valor: valorValue,
-                data: dataValue
-            }
-        ]
-    } else if (nomeAtivoValue == 'cripto') {
-        var formCripto = [
-            {
-                nomeAtivo: ativoValue,
-                qtd: qtdValue,
-                valor: valorValue,
-                data: dataValue
-            }
-        ]
-    } else if (nomeAtivoValue == 'dividendos') {
-        var formDividendos = [
-            {
-                nomeAtivo: ativoValue,
-                qtd: qtdValue,
-                dividendos: dividendosValue,
-                data: dataValue
-            }
-        ]
-    }
-
-
-}*/
-
