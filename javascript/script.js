@@ -14,7 +14,7 @@ const selectElement = document.querySelector('#options');
 const form = document.querySelector('#form');
 let ativoArray = /*JSON.parse(localStorage.getItem('ativoArray')) ||*/[];
 
-selectElement.addEventListener('change', (evento) => {
+selectElement.addEventListener('change', () => {
     const options = document.querySelector('#options');
     const indiceAtivo = options.selectedIndex;
     const tipoAtivo = options[indiceAtivo];
@@ -43,46 +43,53 @@ selectElement.addEventListener('change', (evento) => {
         document.querySelector('#adic').style.display = 'none';
         document.querySelector('#input-dividendos').style.display = 'none';
     }
-    
-    form.addEventListener('submit', (evento) => {
-        evento.preventDefault(); //no refresh
-        const ativo = evento.target.elements['ativo'];
-        const qtd = evento.target.elements['qtd'];
-        const valor = evento.target.elements['valor'];
-        const dividendos = evento.target.elements['dividendos'];
-        const data = evento.target.elements['data'];
 
-        const itemAdicionado = {
-            'tipoAtivo': tipoAtivo.value,
-            'ativo': ativo.value,
-            'qtd': Number(qtd.value),
-            'valor': valor.value,
-            'dividendos': dividendos.value,
-            'data': data.value
-        }
-
-        ativoArray.push(itemAdicionado);
-
-        options.value = options[0];
-        ativo.value = "";
-        qtd.value = "";
-        valor.value = "";
-        dividendos.value = "";
-        data.value = "";
-
-        //localStorage.setItem('ativoArray', JSON.stringify(ativoArray));
-
-        console.log(ativoArray);
-
-        /*ativoArray.forEach((elemento) => { //está recebendo valores a mais 
-            somaQuant += elemento.qtd;
-        });*/
-    
-        console.log(somaQuant);
-    });
-    
 });
+form.addEventListener('submit', (evento) => {
+    evento.preventDefault(); //no refresh
+    const ativo = evento.target.elements['ativo'];
+    const qtd = evento.target.elements['qtd'];
+    const valor = evento.target.elements['valor'];
+    const dividendos = evento.target.elements['dividendos'];
+    const data = evento.target.elements['data'];
 
+    const itemAdicionado = {
+        //'tipoAtivo': tipoAtivo.value,
+        'ativo': ativo.value,
+        'qtd': Number(qtd.value),
+        'valor': valor.value,
+        'dividendos': dividendos.value,
+        'data': data.value
+    }
+
+    ativoArray.push(itemAdicionado);
+
+    //options.value = options[0];
+    ativo.value = "";
+    qtd.value = "";
+    valor.value = "";
+    dividendos.value = "";
+    data.value = "";
+
+    //localStorage.setItem('ativoArray', JSON.stringify(ativoArray));
+
+    console.log(ativoArray);
+
+    /* for (let i = 0; i < ativoArray.length; i++) {
+         let ultimoEl = ativoArray.length - 1;
+         if(somaQuant != 0) {
+             somaQuant += ativoArray[ultimoEl].qtd;
+             console.log(ativoArray[ultimoEl]); //está somando o último elemento 2x
+         } else {
+             somaQuant += ativoArray[i].qtd;
+         }
+     }
+     ativoArray.forEach((elemento) => { //está recebendo valores a mais 
+         somaQuant += elemento.qtd;
+     });*/
+
+    console.log(somaQuant);
+});
 
 
 //Autocomplete
