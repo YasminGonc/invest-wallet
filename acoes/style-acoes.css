@@ -1,0 +1,49 @@
+:root {
+    --marrom: #756C6B;
+    --marrom-secundario: #CDC6AE;
+    --azul: #89CFCC;
+    --branco: #ffffff;
+    --creme: #E7E7E7;
+}
+.acoes {
+    display: flex;
+    flex-direction: column;
+}
+.lista-acoes {
+    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-areas: 
+        "bbse3 bbse3 pssa3 pssa3"
+        "bbas3 bbdc4 itsa4 itsa4"
+        "wege3 wege3 klbn4 klbn4";
+}
+.bbse3 {
+    grid-area: bbse3;
+}
+.pssa3 {
+    grid-area: pssa3;
+}
+.bbas3 {
+    grid-area: bbas3;
+}
+.bbdc4 {
+    grid-area: bbdc4;
+}
+.itsa4 {
+    grid-area: itsa4;
+}
+.wege3 {
+    grid-area: wege3;
+}
+.klbn4 {
+    grid-area: klbn4;
+}
+
+/*.lista-acoes {
+    display: flex;
+    justify-content: space-around;
+    background-color: var(--marrom-secundario);
+    padding: 1rem 0;
+    border: 0.2rem solid var(--creme);
+}*/

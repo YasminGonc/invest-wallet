@@ -1,20 +1,25 @@
 :root {
-    --cor1: #756C6B;
-    --cor2: #89CFCC;
-    --cor3: #ffffff;
-    --cor4: #E7E7E7;
+    --marrom: #756C6B;
+    --azul: #89CFCC;
+    --branco: #ffffff;
+    --creme: #E7E7E7;
 }
 body {
     font-family: 'Lato', sans-serif;
 }
+.main {
+    display: grid;
+    grid-template-columns: auto 1fr;
+}
 .info-geral {
-    background: var(--cor2);
-    padding: 1rem;
+    grid-column: span 2;
     display: flex;
     align-items: center;
     gap: 1rem;
+    background: var(--azul);
+    padding: 1rem;
 }
-.info-geral img {
+.info-geral-usuario {
     width: 5%;
 }
 .info-carteira {
@@ -22,18 +27,46 @@ body {
     justify-content: space-around;
     text-align: center;
     width: 80%;
-    
 }
-.info-carteira h3 {
-    color: var(--cor1);
+.info-carteira-titulo {
+    color: var(--marrom);
     font-weight: bold;
     font-size: 1.2rem;
     margin-bottom: 0.2rem;
 }
-.info-carteira p {
-    color: var(--cor3);
+.info-carteira-valor {
+    color: var(--branco);
     font-size: 1.5rem;
 }
-.info-carteira p span {
+.info-carteira-valor span {
     font-size: 1rem;
+}
+.menu-paginas {
+    background: var(--marrom);
+}
+.menu-paginas-lista {
+    width: max-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.pagina {
+    width: 100%;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+.pagina:hover {
+    background: var(--creme);
+    transition: all 1s;
+}
+.pagina a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    color: black;
+}
+.pagina-atual {
+    background: var(--azul);
 }

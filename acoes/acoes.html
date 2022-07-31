@@ -11,9 +11,9 @@
     <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href="../css/header.css">
     <link rel="stylesheet" href="../css/info-geral.css">
-    <link rel="stylesheet" href="style-acoes">
+    <link rel="stylesheet" href="style-acoes.css">
 
-    <title>Invest Wallet 2.0</title>
+    <title>Ações | Invest Wallet 2.0</title>
 </head>
 
 <body>
@@ -69,65 +69,73 @@
         </nav>
     </header>
 
-    <main>
+    <main class="main">
         <section class="info-geral">
-            <img src="../images/foto.png" alt="Foto usuário">
+            <img src="../images/foto.png" alt="Foto usuário" class="info-geral-usuario">
             <h2>Yasmin Gonçalves</h2>
 
             <div class="info-carteira">
                 <div>
-                    <h3>Aportado</h3>
-                    <p id="aportado"><span>R$</span> 9.500</p>
+                    <h3 class="info-carteira-titulo">Aportado</h3>
+                    <p class="info-carteira-valor" id="aportado"><span>R$</span> 9.500</p>
                 </div>
                 <div>
-                    <h3>Patrimônio</h3>
-                    <p><span>R$</span> 10.000</p>
+                    <h3 class="info-carteira-titulo">Patrimônio</h3>
+                    <p class="info-carteira-valor"><span>R$</span> 10.000</p>
                 </div>
                 <div>
-                    <h3>Dividendo anual</h3>
-                    <p><span>R$</span> 200</p>
+                    <h3 class="info-carteira-titulo">Dividendo anual</h3>
+                    <p class="info-carteira-valor"><span>R$</span> 200</p>
                 </div>
                 <div>
-                    <h3>Retorno</h3>
-                    <p>5%</p>
+                    <h3 class="info-carteira-titulo">Retorno</h3>
+                    <p class="info-carteira-valor">5%</p>
                 </div>
             </div>
         </section>
 
-        <div class="aside-main">
-            <aside>
-                <ul>
-                    <li class="pagina-atual">
-                        <img src="../images/home.svg" alt="Ícone Home">
-                        <p>Dashbord</p>
-                    </li>
-                    <li>
-                        <img src="../images/trending-up.svg" alt="Ícone ações">
-                        <p>Ações</p>
-                    </li>
-                    <li>
-                        <img src="../images/truck.svg" alt="Ícone FIIs">
-                        <p>FIIs</p>
-                    </li>
-                    <li>
-                        <img src="../images/loader.svg" alt="Ícone ETF">
-                        <p>ETF</p>
-                    </li>
-                    <li>
-                        <img src="../images/dollar-sign.svg" alt="Ícone dividendos">
-                        <p>Dividendos</p>
-                    </li>
-                </ul>
-            </aside>
+        <nav class="menu-paginas">
+            <ul class="menu-paginas-lista">
+                <li class="pagina">
+                    <a href="../index.html" target="_parent"><img src="../images/home.svg" alt="Ícone Home">Dashbord</a>
+                </li>
+                <li class="pagina pagina-atual">
+                    <a href="acoes.html"><img src="../images/trending-up.svg" alt="Ícone ações">Ações</a>
+                </li>
+                <li class="pagina">
+                    <a href="#"><img src="../images/truck.svg" alt="Ícone FIIs">FIIs</a>
+                </li>
+                <li class="pagina">
+                    <a href="#"><img src="../images/loader.svg" alt="Ícone ETF">ETF</a>
+                </li>
+                <li class="pagina">
+                    <a href="#"><img src="../images/dollar-sign.svg" alt="Ícone dividendos">Dividendos</a>
+                </li>
+            </ul>
+        </nav>
 
-            <div class="main">
-                <div class="graficos">
-                    <p>Gráficos</p>
-                </div>
-               
+        <section class="acoes">
+            <div class="lista-acoes seguradora">
+                <h2 class="bbse3">BBSE3</h2>
+                <h2 class="pssa3">PSSA3</h2>
             </div>
-        </div>
+            <div class="lista-acoes banco">
+                <h2 class="bbas3">BBAS3</h2>
+                <h2 class="bbdc4">BBDC4</h2>
+                <h2 class="itsa4">ITSA4</h2>
+            </div>
+            <div class="lista-acoes industrial">
+                <h2 class="wege3">WEGE3</h2>
+                <h2 class="klbn4">KLBN4</h2>
+            </div>
+            
+        </section>
+
+
     </main>
+
+    <script src="../javascript/script.js"></script>
+
 </body>
 
 </html>

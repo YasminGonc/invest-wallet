@@ -1,18 +1,15 @@
 :root {
-    --cor1: #756C6B;
-    --cor2: #89CFCC;
-    --cor3: #ffffff;
-    --cor4: #E7E7E7;
-}
-* {
-    font-family: 'Lato', sans-serif;
+    --marrom: #756C6B;
+    --azul: #89CFCC;
+    --branco: #ffffff;
+    --creme: #E7E7E7;
 }
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1rem;
-    background-color: var(--cor1);
+    background-color: var(--marrom);
 }
 header img {
     width: 60%;
@@ -21,7 +18,7 @@ header button {
     font-size: 2rem;
     background-color: transparent;
     border: transparent;
-    color: var(--cor3);
+    color: var(--branco);
     cursor: pointer;
 }
 .add-menu {
@@ -38,13 +35,13 @@ header button {
     top: 0;
     right: 0;
     padding: 2rem;
-    background-color: var(--cor3);
+    background-color: var(--branco);
 }
 .add-menu form fieldset {
     margin-bottom: 1rem;
 }
 #close {
-    color: var(--cor1);
+    color: var(--marrom);
 }
 .input {
     display: flex;
@@ -59,8 +56,8 @@ header button {
     width: 10rem;
     height: 1.5rem;
     padding-left: 0.3rem;
-    background: var(--cor4);
-    border: 0rem solid var(--cor2);
+    background: var(--creme);
+    border: 0rem solid var(--azul);
     border-radius: 0.2rem;
 }
 #options:focus, #ativo:focus, #qtd:focus, #valor:focus, #data:focus, #dividendos:focus {
@@ -77,8 +74,8 @@ header button {
     font-size: 0.8rem;
     text-transform: uppercase;
     font-weight: bold;
-    background-color: var(--cor2);
-    color: var(--cor1);
+    background-color: var(--azul);
+    color: var(--marrom);
     width: 10rem;
     padding: 0.4rem;
     border-radius: 0.4rem;
@@ -86,14 +83,14 @@ header button {
     transition: 400ms;
 }
 #adic:focus {
-    background-color: var(--cor1);
-    color: var(--cor2);
-    border: 0.1rem solid var(--cor1);
+    background-color: var(--marrom);
+    color: var(--azul);
+    border: 0.1rem solid var(--marrom);
 }
 .list {
     width: 100%;
     font-size: 0.7rem;
-    background-color: var(--cor4);
+    background-color: var(--creme);
 }
 .list-items {
     width: 100%;
