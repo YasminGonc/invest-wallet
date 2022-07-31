@@ -8,11 +8,7 @@ document.querySelector('#close').addEventListener('click', () => {
     btnMenuAdd.classList.remove('on');
 });
 
-let somaQuant = 0;
-
 const selectElement = document.querySelector('#options');
-const form = document.querySelector('#form');
-let ativoArray = /*JSON.parse(localStorage.getItem('ativoArray')) ||*/[];
 
 selectElement.addEventListener('change', () => {
     const options = document.querySelector('#options');
@@ -45,6 +41,11 @@ selectElement.addEventListener('change', () => {
     }
 
 });
+
+const form = document.querySelector('#form');
+const valorAportado = document.querySelector('#aportado');
+let ativoArray = /*JSON.parse(localStorage.getItem('ativoArray')) ||*/[];
+
 form.addEventListener('submit', (evento) => {
     evento.preventDefault(); //no refresh
     const ativo = evento.target.elements['ativo'];
@@ -64,7 +65,7 @@ form.addEventListener('submit', (evento) => {
 
     ativoArray.push(itemAdicionado);
 
-    //options.value = options[0];
+    options.value = options[0];
     ativo.value = "";
     qtd.value = "";
     valor.value = "";
@@ -75,20 +76,15 @@ form.addEventListener('submit', (evento) => {
 
     console.log(ativoArray);
 
-    /* for (let i = 0; i < ativoArray.length; i++) {
-         let ultimoEl = ativoArray.length - 1;
-         if(somaQuant != 0) {
-             somaQuant += ativoArray[ultimoEl].qtd;
-             console.log(ativoArray[ultimoEl]); //está somando o último elemento 2x
-         } else {
-             somaQuant += ativoArray[i].qtd;
-         }
-     }
-     ativoArray.forEach((elemento) => { //está recebendo valores a mais 
-         somaQuant += elemento.qtd;
-     });*/
+    function getTotal(sumValor, item) {
+        return sumValor + (Number(item.valor) * Number(item.qtd));
+    }
 
-    console.log(somaQuant);
+    let sumValor = ativoArray.reduce(getTotal, 0); //colocar em um array para conseguir aproveitar para as outras páginas
+
+    console.log(sumValor);
+
+    valorAportado.innerHTML = `<span>R$</span> ${sumValor}`; 
 });
 
 
