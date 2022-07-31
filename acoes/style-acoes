@@ -1,0 +1,33 @@
+:root {
+    --cor1: #756C6B;
+    --cor2: #89CFCC;
+    --cor3: #ffffff;
+    --cor4: #E7E7E7;
+}
+* {
+    font-family: 'Lato', sans-serif;
+}
+.aside-main {
+    display: flex;
+}
+.main {
+    background: var(--cor4);
+    width: 90%;
+    text-align: center;
+}
+aside {
+    width: 10%;
+    text-align: center;
+    background: var(--cor1);
+}
+aside li {
+    padding: 2rem 0 2rem 0;
+    cursor: pointer;
+}
+aside li:hover {
+    background: var(--cor4);
+    transition: all 1s;
+}
+.pagina-atual {
+    background: var(--cor2);
+}

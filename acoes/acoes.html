@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/info-geral.css">
+    <link rel="stylesheet" href="style-acoes">
+
+    <title>Invest Wallet 2.0</title>
+</head>
+
+<body>
+    <header>
+        <h1><img src="../images/logo.png" alt="Logo Invest Wallet"></h1>
+        <nav>
+            <button id="add">+</button>
+
+            <div class="add-menu">
+                <button id="close">&times;</button>
+
+                <form id="form">
+                    <fieldset class="input">
+                        <label for="options">Tipo de ativo</label>
+                        <select name="options" id="options">
+                            <option value="nenhum">-</option>
+                            <option value="acao">Ação</option>
+                            <option value="fii">FII</option>
+                            <option value="cripto">ETF cripto</option>
+                            <option value="dividendos">Dividendos</option>
+                        </select>
+                    </fieldset>
+
+                    <fieldset class="input" id="input-ativo">
+                        <label for="ativo">Ativo</label>
+                        <input type="text" name="ativo" id="ativo">
+                        <ul class="list"></ul>
+                    </fieldset>
+
+                    <fieldset class="input" id="input-qtd">
+                        <label for="qtd">Quantidade comprada</label>
+                        <input type="number" name="qtd" id="qtd">
+                    </fieldset>
+
+                    <fieldset class="input" id="input-valor">
+                        <label for="valor">Valor de compra por unidade</label>
+                        <input type="number" name="valor" id="valor" placeholder="R$ 0.00 / ativo">
+                    </fieldset>
+
+                    <fieldset class="input" id="input-dividendos">
+                        <label for="dividendos">Valor recebido</label>
+                        <input type="number" name="dividendos" id="dividendos" placeholder="R$ 0.00">
+                    </fieldset>
+
+                    <fieldset class="input" id="input-data">
+                        <label for="data">Data de compra</label>
+                        <input type="date" name="data" id="data">
+                    </fieldset>
+
+                    <input type="submit" id="adic" value="Adicionar">
+                </form>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="info-geral">
+            <img src="../images/foto.png" alt="Foto usuário">
+            <h2>Yasmin Gonçalves</h2>
+
+            <div class="info-carteira">
+                <div>
+                    <h3>Aportado</h3>
+                    <p id="aportado"><span>R$</span> 9.500</p>
+                </div>
+                <div>
+                    <h3>Patrimônio</h3>
+                    <p><span>R$</span> 10.000</p>
+                </div>
+                <div>
+                    <h3>Dividendo anual</h3>
+                    <p><span>R$</span> 200</p>
+                </div>
+                <div>
+                    <h3>Retorno</h3>
+                    <p>5%</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="aside-main">
+            <aside>
+                <ul>
+                    <li class="pagina-atual">
+                        <img src="../images/home.svg" alt="Ícone Home">
+                        <p>Dashbord</p>
+                    </li>
+                    <li>
+                        <img src="../images/trending-up.svg" alt="Ícone ações">
+                        <p>Ações</p>
+                    </li>
+                    <li>
+                        <img src="../images/truck.svg" alt="Ícone FIIs">
+                        <p>FIIs</p>
+                    </li>
+                    <li>
+                        <img src="../images/loader.svg" alt="Ícone ETF">
+                        <p>ETF</p>
+                    </li>
+                    <li>
+                        <img src="../images/dollar-sign.svg" alt="Ícone dividendos">
+                        <p>Dividendos</p>
+                    </li>
+                </ul>
+            </aside>
+
+            <div class="main">
+                <div class="graficos">
+                    <p>Gráficos</p>
+                </div>
+               
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
