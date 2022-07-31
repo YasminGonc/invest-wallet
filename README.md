@@ -22,10 +22,13 @@ https://yasmingonc.github.io/invest-wallet/
 Todos os ativos disponíveis nessa aplicação estão baseados na minha carteira pessoal. Os ativos contidos nela são de ordem pessoal, portanto são ativos que fazem sentido para os meus objetivos. Sendo assim, <strong>não</strong> é uma recomendação de compra.
 
 ## Fase atual do projeto
-Capturar, armazenar informações e cálculos.
+<li>Cálculos com os inputs;</li>
+<li>Construção das informações na tela de ações;</li>
 
 ## Fases implantadas
 <li>Tela <a href="https://www.figma.com/file/P78MIZRORbH7NboQyGsKXu/Invest-Wallet?node-id=0%3A1">Figma</a>;</li>
-<li>Tela inicial;</li>
+<li>Tela home com as informações básicas;</li>
 <li>Menu adicionar dinâmico;</li>
+<li>Capturar informações do form e armazenar no localStorage (provisoriamente);</li>
+
 
