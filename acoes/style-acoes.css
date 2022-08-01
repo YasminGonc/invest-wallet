@@ -11,12 +11,28 @@
 }
 .lista-acoes {
     text-align: center;
+    background-color: var(--creme);
+    color: var(--marrom);
+    font-weight: 700;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-areas: 
         "bbse3 bbse3 pssa3 pssa3"
         "bbas3 bbdc4 itsa4 itsa4"
-        "wege3 wege3 klbn4 klbn4";
+        "wege3 wege3 klbn4 klbn4"
+        "mglu3 mglu3 lren3 lren3"
+        "sapr4 sapr4 sapr11 sapr11"
+        "alup4 taee11 trpl4 neoe3"
+        "nvdc34 nvdc34 nvdc34 nvdc34";
+}
+.ativo {
+    padding: 1rem;
+    cursor: pointer;
+    /*border-bottom: 0.1rem solid var(--marrom);
+    border-right: 0.1rem solid var(--marrom);*/
+}
+.ativo:hover {
+    background-color: var(--azul);
 }
 .bbse3 {
     grid-area: bbse3;
@@ -39,11 +55,48 @@
 .klbn4 {
     grid-area: klbn4;
 }
-
-/*.lista-acoes {
-    display: flex;
-    justify-content: space-around;
-    background-color: var(--marrom-secundario);
-    padding: 1rem 0;
-    border: 0.2rem solid var(--creme);
+.mglu3 {
+    grid-area: mglu3;
+}
+.lren3 {
+    grid-area: lren3;
+}
+.sapr4 {
+    grid-area: sapr4;
+}
+.sapr11 {
+    grid-area: sapr11;
+}
+.alup4 {
+    grid-area: alup4;
+}
+.taee11 {
+    grid-area: taee11;
+}
+.trpl4 {
+    grid-area: trpl4;
+}
+.neoe3 {
+    grid-area: neoe3;
+}
+.nvdc34 {
+    grid-area: nvdc34;
+}
+.acoes-tabela {
+   align-self: center;
+   display: none;
+}
+/* .acoes-tabela-pssa3 {
+    align-self: flex-end;
 }*/
+.acoes-tabela.on {
+    display: block;
+}
+.tabela {
+    text-align: center;
+    border-collapse: collapse;
+    margin: 1rem;
+}
+th, td {
+    padding: 0.5rem;
+}
