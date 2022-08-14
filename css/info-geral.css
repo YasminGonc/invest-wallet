@@ -22,6 +22,10 @@ body {
 .info-geral-usuario {
     width: 5%;
 }
+.info-geral__nome-usuario {
+    font-size: 1.2rem;
+    color: var(--marrom);
+}
 .info-carteira {
     display: flex;
     justify-content: space-around;

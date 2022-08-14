@@ -15,7 +15,7 @@ selectElement.addEventListener('change', () => {
     const indiceAtivo = options.selectedIndex;
     const tipoAtivo = options[indiceAtivo];
 
-    if (tipoAtivo.value == 'acao' || tipoAtivo.value == 'fii' || tipoAtivo.value == 'cripto') {//Mostrar inputs de acordo com o tipo do ativo
+    if (tipoAtivo.value == 'acao' || tipoAtivo.value == 'fii' || tipoAtivo.value == 'cripto' || tipoAtivo.value == 'bdr') {//Mostrar inputs de acordo com o tipo do ativo
         document.querySelector('#input-ativo').style.display = 'flex';
         document.querySelector('#input-qtd').style.display = 'flex';
         document.querySelector('#input-valor').style.display = 'flex';
@@ -44,10 +44,12 @@ selectElement.addEventListener('change', () => {
 
 const form = document.querySelector('#form');
 const valorAportado = document.querySelector('#aportado');
-let ativoArray = /*JSON.parse(localStorage.getItem('ativoArray')) ||*/[];
+const dividendo = document.querySelector('#dividendo');
+let ativoArray = JSON.parse(localStorage.getItem('ativoArray')) || [];
 
 form.addEventListener('submit', (evento) => {
     evento.preventDefault(); //no refresh
+    const tipo = evento.target.elements['options'];
     const ativo = evento.target.elements['ativo'];
     const qtd = evento.target.elements['qtd'];
     const valor = evento.target.elements['valor'];
@@ -55,7 +57,7 @@ form.addEventListener('submit', (evento) => {
     const data = evento.target.elements['data'];
 
     const itemAdicionado = {
-        //'tipoAtivo': tipoAtivo.value,
+        'tipoAtivo': tipo.value,
         'ativo': ativo.value,
         'qtd': Number(qtd.value),
         'valor': valor.value,
@@ -72,20 +74,35 @@ form.addEventListener('submit', (evento) => {
     dividendos.value = "";
     data.value = "";
 
-    //localStorage.setItem('ativoArray', JSON.stringify(ativoArray));
+    localStorage.setItem('ativoArray', JSON.stringify(ativoArray));
 
-    console.log(ativoArray);
+});
 
+const fiiArray = ativoArray.filter(item => item.tipoAtivo == 'fii');
+const acaoArray = ativoArray.filter(item => item.tipoAtivo == 'acao');
+const criptoArray = ativoArray.filter(item => item.tipoAtivo == 'cripto');
+const bdrArray = ativoArray.filter(item => item.tipoAtivo == 'bdr');
+const dividendosArray = ativoArray.filter(item => item.tipoAtivo == 'dividendos');
+
+function updateValues() {
     function getTotal(sumValor, item) {
         return sumValor + (Number(item.valor) * Number(item.qtd));
     }
 
-    let sumValor = ativoArray.reduce(getTotal, 0); //colocar em um array para conseguir aproveitar para as outras páginas
+    let sumFii = fiiArray.reduce(getTotal,0);
+    let sumAcao = acaoArray.reduce(getTotal,0);
+    let sumCripto = criptoArray.reduce(getTotal,0);
+    let sumBdr = bdrArray.reduce(getTotal,0);
+    let sumDividendos = dividendosArray.reduce(getTotal,0);
+    let sumValor = sumFii + sumAcao + sumCripto +sumBdr - sumDividendos; 
 
-    console.log(sumValor);
+    valorAportado.innerHTML = `<span>R$</span> ${sumValor}`;
+    dividendo.innerHTML = `<span>R$</span> ${sumDividendos}`;
+}
 
-    valorAportado.innerHTML = `<span>R$</span> ${sumValor}`; 
-});
+updateValues();
+
+console.log(ativoArray);
 
 
 //Autocomplete

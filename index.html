@@ -6,12 +6,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/459768b8b6.js" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/info-geral.css">
-    <link rel="stylesheet" href="css/style-index.css">
+    <link rel="stylesheet" href="index/index.css/style-index.css">
 
     <title>Home | Invest Wallet 2.0</title>
 </head>
@@ -33,6 +37,7 @@
                             <option value="acao">Ação</option>
                             <option value="fii">FII</option>
                             <option value="cripto">ETF cripto</option>
+                            <option value="bdr">BDR</option>
                             <option value="dividendos">Dividendos</option>
                         </select>
                     </fieldset>
@@ -72,7 +77,7 @@
     <main class="main">
         <section class="info-geral">
             <img src="images/foto.png" alt="Foto usuário" class="info-geral-usuario">
-            <h2>Yasmin Gonçalves</h2>
+            <h2 class="info-geral__nome-usuario">Yasmin Gonçalves</h2>
 
             <div class="info-carteira">
                 <div>
@@ -85,13 +90,14 @@
                 </div>
                 <div>
                     <h3 class="info-carteira-titulo">Dividendo anual</h3>
-                    <p class="info-carteira-valor"><span>R$</span> 200</p>
+                    <p class="info-carteira-valor" id="dividendo"><span>R$</span> 200</p>
                 </div>
                 <div>
                     <h3 class="info-carteira-titulo">Retorno</h3>
                     <p class="info-carteira-valor">5%</p>
                 </div>
             </div>
+
         </section>
 
         <nav class="menu-paginas">
@@ -114,10 +120,154 @@
             </ul>
         </nav>
 
+        <section class="graficos">
+            <div class="grafico" id="fii">
+                <h3 class="grafico__porcentagem" id="fii-porcentagem">5<span class="valor__moeda">%</span></h3>
+                <div class="grafico__infos">
+                    <h2 class="grafico__infos-ativo">FII</h2>
+                    <p class="grafico__infos-valor" id="fii-consolidado"><span class="valor__moeda">R$</span> 1.000</p>
+                </div>
+                <i class="fa-solid fa-angle-down"></i>
+            </div>
+
+            <div class="grafico">
+                <h3 class="grafico__porcentagem">5%</h3>
+                <div class="grafico__infos">
+                    <h2 class="grafico__infos-ativo">Ações</h2>
+                    <p class="grafico__infos-valor" id="acao-consolidado"><span class="valor__moeda">R$</span> 1.000</p>
+                </div>
+                <i class="fa-solid fa-angle-down"></i>
+            </div>
+
+            <div class="grafico">
+                <h3 class="grafico__porcentagem">5%</h3>
+                <div class="grafico__infos">
+                    <h2 class="grafico__infos-ativo">BDR</h2>
+                    <p class="grafico__infos-valor" id="bdr-consolidado"><span class="valor__moeda">R$</span> 1.000</p>
+                </div>
+                <i class="fa-solid fa-angle-down"></i>
+            </div>
+
+            <div class="grafico">
+                <h3 class="grafico__porcentagem">5%</h3>
+                <div class="grafico__infos">
+                    <h2 class="grafico__infos-ativo">ETF</h2>
+                    <p class="grafico__infos-valor" id="etf-consolidado"><span class="valor__moeda">R$</span> 1.000</p>
+                </div>
+                <i class="fa-solid fa-angle-down"></i>
+            </div>
+
+            <div class="consolidado" id="table-fii">
+                <table class="consolidado__tabela" >
+                    <thead>
+                        <tr>
+                            <th>Ativo</th>
+                            <th>Qtde</th>
+                            <th>P.Médio</th>
+                            <th>P.Médio Desc.</th>
+                            <th>Preço</th>
+                            <th>Dividendos Acum.</th>
+                            <th>% Carteira</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbody-fii">
+                        <tr>
+                            <td>HGLG11</td>
+                            <td>4</td>
+                            <td>R$ 174,78</td>
+                            <td>R$ 144,76</td>
+                            <td>R$ 171,40</td>
+                            <td>R$ 120,06</td>
+                            <td>18,17%</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="consolidado">
+                <table class="consolidado__tabela">
+                    <thead>
+                        <tr>
+                            <th>Ativo</th>
+                            <th>Qtde</th>
+                            <th>P.Médio</th>
+                            <th>P.Médio Desc.</th>
+                            <th>Preço</th>
+                            <th>Dividendos Acum.</th>
+                            <th>% Carteira</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>BBAS3</td>
+                            <td>5</td>
+                            <td>R$ 31,36</td>
+                            <td>R$ 29,25</td>
+                            <td>R$ 44,10</td>
+                            <td>R$ 10,60</td>
+                            <td>5%</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="consolidado">
+                <table class="consolidado__tabela">
+                    <thead>
+                        <tr>
+                            <th>Ativo</th>
+                            <th>Qtde</th>
+                            <th>P.Médio</th>
+                            <th>P.Médio Desc.</th>
+                            <th>Preço</th>
+                            <th>Dividendos Acum.</th>
+                            <th>% Carteira</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>NVDC34</td>
+                            <td>2</td>
+                            <td>R$ 27,60</td>
+                            <td>R$ 27,59</td>
+                            <td>R$ 20,34</td>
+                            <td>R$ 0,01</td>
+                            <td>5%</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="consolidado">
+                <table class="consolidado__tabela">
+                    <thead>
+                        <tr>
+                            <th>Ativo</th>
+                            <th>Qtde</th>
+                            <th>P.Médio</th>
+                            <th>Preço</th>
+                            <th>% Carteira</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>QBTC11</td>
+                            <td>5</td>
+                            <td>R$ 11,42</td>
+                            <td>R$ 6,57</td>
+                            <td>5%</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+
 
     </main>
 
     <script src="javascript/script.js"></script>
+    <script src="index/index.js"></script>
 
 </body>
 

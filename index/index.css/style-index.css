@@ -1,0 +1,9 @@
+@import url(graficos.css);
+
+
+:root {
+    --marrom: #756C6B;
+    --azul: #89CFCC;
+    --branco: #ffffff;
+    --creme: #E7E7E7;
+}

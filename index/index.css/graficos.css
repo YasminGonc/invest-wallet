@@ -1,0 +1,63 @@
+.graficos {
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto 1fr;
+    justify-content: center;
+}
+
+.grafico {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: fit-content;
+    cursor: pointer;
+}
+
+.grafico__porcentagem {
+    border: 1px solid var(--azul);
+    padding: 0.6rem;
+    border-radius: 100%;
+    color: var(--marrom);
+}
+
+.grafico__infos {
+    margin: 0 0 0 1rem;
+}
+
+.grafico__infos-ativo {
+    margin: 0 0 0.2rem 0;
+}
+
+.valor__moeda {
+    font-size: 0.8rem;
+}
+
+.fa-solid.fa-angle-down {
+    margin: 0 0 0 1rem;
+    color: var(--azul);
+}
+
+.fa-solid.fa-angle-down.rotated {
+    transform: rotate(180deg);
+}
+
+.consolidado {
+    grid-column: span 4;
+    display: none;
+}
+
+.consolidado.on {
+    display: block;
+}
+
+.consolidado__tabela {
+    text-align: center;
+    border-collapse: collapse;
+    margin: 2rem 1rem 1rem 1rem;
+}
+
+th, td {
+    padding: 0.5rem;
+    border-bottom: 1px solid var(--marrom);
+}
