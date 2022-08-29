@@ -3,6 +3,7 @@
  <img src="https://img.shields.io/badge/HTML-239120?style=for-the-badge&logo=html5&logoColor=white" target="_blank">
  <img src="https://img.shields.io/badge/CSS-239120?&style=for-the-badge&logo=css3&logoColor=white" target="_blank">
  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" target="_blank">
+ <img src="https://img.shields.io/badge/-Em%20desenvolvimento-success" target="_blank">
  </div>
 A InvestWallet nasceu da vontade em organizar minha carteira de investimentos de forma mais dinâmica e personalizada, transformando o que era uma planilha de excel em uma aplicação. 
 <br>
